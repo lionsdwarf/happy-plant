@@ -1,0 +1,8 @@
+<h2><%= @plant.name %></h2>
+<h3><%= @plant.plant_type %></h3>
+<img src="<%= @plant.photo_url %>" alt="">
+<p>Stamina: <%= @plant.stamina %> days</p>
+
+
+<%= link_to "Edit", edit_plant_path(@plant) %>
+<%= link_to "Home", user_path(@plant) %>

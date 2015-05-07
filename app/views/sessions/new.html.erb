@@ -1,0 +1,13 @@
+<%= form_tag '/sessions' do %>
+  <br>
+  <%= label_tag :username %><br>
+  <%= text_field_tag :username %><br>
+  <br>
+  <%= label_tag :password %><br>
+  <%= password_field_tag :password %><br>
+  <br>
+  <%= submit_tag 'Log in' %>
+
+  <p>Or: <%= link_to 'Sign up', new_user_path %></p>
+
+<% end %>
