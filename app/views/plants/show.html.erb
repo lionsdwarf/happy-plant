@@ -4,5 +4,6 @@
 <p>Stamina: <%= @plant.stamina %> days</p>
 
 
-<%= link_to "Edit", edit_plant_path(@plant) %>
-<%= link_to "Home", user_path(@plant) %>
+<%= link_to "Edit", edit_plant_path(@plant) %> <br>
+<%= link_to "Home", user_path(current_user) %> <br>
+<%= button_to "Delete", @plant, :method=>:delete, :class=>:destroy%>

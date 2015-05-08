@@ -1,9 +1,2 @@
-<% if current_user %>
-  <p>Welcome back, <%= current_user.username %> |
-    <%= link_to 'Log out', sessions_path, method: :delete %>
-  </p>
-<% else %> 
-  <p>
-    <%= link_to 'Log in', sessions_new_path %>
-  </p>
-<% end%>
+<%= link_to 'Log in', sessions_new_path %>
+<%= link_to 'Sign up', new_user_path %>

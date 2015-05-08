@@ -1,8 +1,8 @@
 <%= link_to '+ Plant', new_plant_path %>
 <hr>
 <% @user.plants.each do |plant| %>
-  <img src="<% plant.photo_url%>" alt="<%= plant.name %>">
-  <h1><%= plant.name %></h1><br>
+  <h1><%= link_to plant.name, plant_path(plant.id) %></h1><br>
+  <img src="<% plant.photo_url %>" alt="<%= plant.name %>">
   <h2><%= plant.plant_type %></h2>
   <p>Stamina: <%= plant.stamina %> days</p>
 
