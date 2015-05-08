@@ -3,6 +3,21 @@ class UsersController < ApplicationController
   before_action :authenticate
   skip_before_action :authenticate, only: [:new, :create]
 
+  # def index
+  #   render json: User.all      
+  # end
+
+  def show
+    if User.find(params[:id]) == current_user
+      @user = User.find(params[:id])
+  
+      respond_to do |format|
+        format.html {}
+        format.json { render json: @user }
+      end
+    end
+  end
+
   def new
     @user = User.new
   end
@@ -17,30 +32,22 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-    render json: User.all      
-  end
-
-  def show
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html {}
-      format.json { render json: @user }
+  def edit
+    if User.find(params[:id]) == current_user
+      @user = User.find(params[:id])
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
-
   def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
+    if User.find(params[:id]) == current_user
 
-    respond_to do |format|
-      format.html { redirect_to user_path(@user.id) }
-      format.json { render json: @user }
+      @user = User.find(params[:id])
+      @user.update(user_params)
+  
+      respond_to do |format|
+        format.html { redirect_to user_path(@user.id) }
+        format.json { render json: @user }
+      end
     end
   end
 

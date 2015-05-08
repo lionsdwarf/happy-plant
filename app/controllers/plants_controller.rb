@@ -8,7 +8,7 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
-
+  
     respond_to do |format|
       format.html {}
       format.json { render json: @plant }
@@ -21,10 +21,11 @@ class PlantsController < ApplicationController
 
   def create
     @plant = Plant.new(plant_params)
+    @plant.user_id = current_user.id
     @plant.save
 
     respond_to do |format|
-      format.html { redirect_to plants_path } 
+      format.html { redirect_to plant_path(@plant.id) } 
       format.json { render json: @plant }
     end
   end
@@ -48,7 +49,7 @@ class PlantsController < ApplicationController
     @plant.destroy
 
     respond_to do |format|
-      format.html { redirect_to plants_path }
+      format.html { redirect_to user_path(current_user) }
       format.json { render json: @plant }
     end
   end

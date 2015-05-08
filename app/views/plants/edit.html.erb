@@ -1,0 +1,22 @@
+<%= form_for @plant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.label :photo_url %>
+  <%= f.text_field :photo_url %>
+  <br>
+
+  <%= f.label :plant_type %>
+  <%= f.text_field :plant_type %>
+  <br>
+
+  <%= f.label :stamina %>
+  <%= f.text_field :stamina %>
+  <br>
+
+  <%= f.submit  %>
+
+  <%= link_to "Back", plant_path(@plant.id) %>
+
+<% end %>
