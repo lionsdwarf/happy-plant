@@ -31,9 +31,14 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-  gem 'twilio-ruby'
-  gem 'delayed_job_active_record'
-  gem 'daemons'
+gem 'twilio-ruby'
+
+# for holding and automating production deployments
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
+
+# for task scheduling
+gem 'whenever', :require => false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

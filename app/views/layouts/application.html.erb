@@ -8,19 +8,20 @@
 </head>
 <body>
 
-<h1>Happy Plant.r</h1><hr>
 
 <% if current_user %>
   <p>Welcome back, <%= current_user.username %> |
     <%= link_to 'Log out', sessions_path, method: :delete %>
   </p>
 <% else %> 
-  <p>
-    Happy Plant.r sends you sms reminders to water your plants when they are thirsty. You can even add a plant caretaker. It's really easy: <br>
-    1) Add a plant and define it's watering frequency.<br>2) Leave your phone on.
-    <br>
-  </p>
-  
+  <div class="generic-landing-page">
+    <h1>Happy Plant.r</h1><hr>
+    <p>
+      Happy Plant.r sends you sms reminders to water your plants when they are thirsty. You can even add a plant caretaker. It's really easy: <br>
+      1) Add a plant and define it's watering frequency.<br>2) Leave your phone on.
+      <br>
+    </p>
+  </div>
 <% end%>
 
 <%= yield %>
