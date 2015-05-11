@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
   def index
   end
 
+  def test
+    # whatever the hell i want
+    Plant.all.sample.notify
+    render text: 'Check your phone, dood.'
+  end
+
   def current_user
     User.find_by(id: session[:current_user])
   end

@@ -22,6 +22,7 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     @plant.user_id = current_user.id
+    @plant.last_notified = DateTime.now.to_i.to_s
     @plant.save
 
     respond_to do |format|
@@ -57,7 +58,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :plant_type, :stamina, :photo_url, :user_id)
+    params.require(:plant).permit(:name, :plant_type, :stamina, :photo_url, :user_id, :last_notified)
   end
 
 end
