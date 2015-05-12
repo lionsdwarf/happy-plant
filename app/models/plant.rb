@@ -11,6 +11,8 @@ class Plant < ActiveRecord::Base
               only_integer: true,
               greater_than: 0,
               less_than: 31 }
+  validates :last_notified,
+            presence: true
 
   def notify
     # puts "notify called"
@@ -23,7 +25,7 @@ class Plant < ActiveRecord::Base
     message = @client.account.messages.create(
       :from => @twilio_num,
       :to => recipient,
-      :body => "#{name} is getting thirsty...Please hydrate with tepid water.",
+      :body => "#{name} is getting thirsty...please hydrate with tepid water.",
       :media_url => photo_url
     )
     last_notified = DateTime.now.to_i.to_s

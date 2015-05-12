@@ -22,7 +22,7 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     @plant.user_id = current_user.id
-    @plant.last_notified = DateTime.now.to_i.to_s
+    @plant.last_notified = DateTime.now
     @plant.save
 
     respond_to do |format|
