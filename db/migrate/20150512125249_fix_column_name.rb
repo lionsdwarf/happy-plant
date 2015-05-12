@@ -1,5 +1,5 @@
 class FixColumnName < ActiveRecord::Migration
   def change
-    rename_column :plants, :type, :plant_type
+    rename_column :users, :phone_num, :phone_num1
   end
 end
