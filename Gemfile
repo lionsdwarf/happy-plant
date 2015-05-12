@@ -39,6 +39,11 @@ gem 'dotenv-rails', :require => 'dotenv/rails-now'
 # for task scheduling
 gem 'whenever', :require => false
 
+# for heroku deployment
+gem 'rails_12factor', group: :production
+
+ruby '2.1.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
