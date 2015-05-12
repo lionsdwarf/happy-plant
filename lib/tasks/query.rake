@@ -1,4 +1,4 @@
-namespace :query do
+# namespace :query do
   desc "TODO"
   task query_db: :environment do
   # task :query_db => :environment do
@@ -6,4 +6,4 @@ namespace :query do
       plant.thirst_checker
     end
   end
-end
+# end
