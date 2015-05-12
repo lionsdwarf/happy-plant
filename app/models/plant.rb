@@ -13,6 +13,7 @@ class Plant < ActiveRecord::Base
               less_than: 31 }
 
   def notify
+    # puts "notify called"
     account_sid = ENV['TWILIO_ACCT_SID']
     auth_token = ENV['TWILIO_AUTH_TOKEN']
     @client = Twilio::REST::Client.new account_sid, auth_token
@@ -22,13 +23,20 @@ class Plant < ActiveRecord::Base
     message = @client.account.messages.create(
       :from => @twilio_num,
       :to => recipient,
-      :body => "#{name} is thirsty today--please hydrate...",
+      :body => "#{name} is getting thirsty...Please hydrate with tepid water.",
       :media_url => photo_url
     )
+    last_notified = DateTime.now.to_i.to_s
   end
 
-  def query_db
-    
+  def thirst_checker
+    # puts "thirst checker called"
+    # stamina = stamina * 86400
+    last_notified = last_notified.to_i
+    now = DateTime.now.to_i
+    if now > last_notified + stamina
+      self.notify
+    end 
   end
 
 
