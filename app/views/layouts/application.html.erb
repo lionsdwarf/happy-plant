@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HappyPlant.r</title>
+  <title>Happy Plant.r</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
-
-<% if current_user %>
-  <p>Welcome back, <%= current_user.username %> |
-    <%= link_to 'Log out', sessions_path, method: :delete %>
-  </p>
-<% else %> 
-  <div class="generic-landing-page">
-    <h1>Happy Plant.r</h1><hr>
-    <p>
-      Happy Plant.r sends you sms reminders to water your plants when they are thirsty. You can even add a plant caretaker. It's really easy: <br>
-      1) Add a plant and define it's watering frequency.<br>2) Leave your phone on.
-      <br>
-    </p>
+  <div class="page">
+      
+    <% if current_user %>
+      <h2 class="logged-in-header">Happy Plant.r</h2>
+      <div class="welcome-logout">
+        <p class="welcome-msg">Welcome back, <%= current_user.username %></p>
+      </div>
+    <% else %> 
+      <div class="landing-page">
+        <div class="landing-page-blurb">
+        <h1>Happy Plant.r</h1>
+        Receive mms reminders to water your plants when they are thirsty. <br> And send reminders to your plant caretakers too. It's really easy: <br>
+        1) Add your plants and define their watering frequencies.<br>
+        2) Leave your phone on.<br>
+        </div>
+      </div>
+    <% end%>
+    <%= yield %>
   </div>
-<% end%>
 
-<%= yield %>
 
 </body>
 </html>

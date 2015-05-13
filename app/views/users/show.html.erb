@@ -1,19 +1,21 @@
-<%= link_to 'Add Plant Profile', new_plant_path %>
-<%= link_to 'Manage Recipients', recipients_path %>
+<div class="plant-recipient-links">
+  <a><%= link_to 'Add Plant Profile', new_plant_path %></a>
+  <a id="pipe2"> &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;</a>
+  <a><%= link_to 'MMS Recipients', recipients_path %></a>
+</div>
 
-<hr>
+<div class="plants">
+<h3>Your plants:</h3>
+  <% @user.plants.each do |plant| %>
+    <div class="plant">
+      <a><%= link_to plant.name, plant_path(plant.id) %></a><br>
+      <img src="<%= plant.photo_url %>" alt="<%= plant.name %>">
+      <h2><%= plant.plant_type %></h2>
+      <p>Stamina: <%= plant.stamina %> days</p>
+    
+      <a> <%= link_to 'Edit', edit_plant_path(plant.id) %> </a>
+    </div>
+    <% end %>
+</div>
 
-<% @user.recipients.each do |recipient| %>
-  <%= recipient.name %>
-  <br>
-<% end %>
-
-<hr>
-<% @user.plants.each do |plant| %>
-  <h1><%= link_to plant.name, plant_path(plant.id) %></h1><br>
-  <img src="<%= plant.photo_url %>" alt="<%= plant.name %>">
-  <h2><%= plant.plant_type %></h2>
-  <p>Stamina: <%= plant.stamina %> days</p>
-
-  <%= link_to 'Edit', edit_plant_path(plant.id) %>
-<% end %>
+<a class="logout"><%= link_to 'Log out', sessions_path, method: :delete %></a>

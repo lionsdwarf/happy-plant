@@ -1,1 +1,15 @@
-HOLA
+<div class="edit-recipient-form"> 
+  <p> Edit MMS Recipient: </p>
+  <%= form_for @recipient do |f| %>
+  
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :phone %>
+    <%= f.text_field :phone_num %>
+    <br>
+
+    <%= f.submit %>
+
+  <% end %>
+</div>

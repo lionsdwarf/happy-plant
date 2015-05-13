@@ -1,13 +1,12 @@
-<%= form_tag '/sessions' do %>
-  <br>
-  <%= label_tag :username %><br>
-  <%= text_field_tag :username %><br>
-  <br>
-  <%= label_tag :password %><br>
-  <%= password_field_tag :password %><br>
-  <br>
-  <%= submit_tag 'Log in' %><br>
-
-  <p>Or: <%= link_to 'Sign up', new_user_path %></p> 
-
-<% end %>
+<div class="login-form"> 
+  <h3>Log in: </h3>
+  <%= form_tag '/sessions' do %>
+    <%= label_tag :username %><br>
+    <%= text_field_tag :username %><br>
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %><br>
+    <%= submit_tag 'Log in' %><br>
+  
+    <p>Or:&nbsp;&nbsp;<a><%= link_to 'Sign up', new_user_path %></a></p> 
+  <% end %>
+</div>

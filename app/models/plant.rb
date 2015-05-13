@@ -23,12 +23,12 @@ class Plant < ActiveRecord::Base
 
     recipient_array.each do |recipient|
 
-      recipient = "+1" + recipient.phone_num
+      phone = "+1" + recipient.phone_num
   
       message = @client.account.messages.create(
         :from => @twilio_num,
-        :to => recipient,
-        :body => "#{name} is getting thirsty...please hydrate...",
+        :to => phone,
+        :body => "Hi #{recipient.name}, #{name} is getting thirsty...please hydrate...",
         :media_url => photo_url
       )
       last_notified = DateTime.now

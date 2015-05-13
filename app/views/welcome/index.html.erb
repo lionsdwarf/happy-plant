@@ -1,2 +1,11 @@
-<%= link_to 'Log in', sessions_new_path %>
-<%= link_to 'Sign up', new_user_path %>
+<% if current_user %>
+
+  <%= link_to "Home", user_path(current_user) %> <br>
+
+<% else %>
+  <div class="login-signup">
+    <a><%= link_to 'Log in', sessions_new_path %></a> 
+    <a id="pipe"> &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;</a> 
+    <a><%= link_to 'Sign up', new_user_path %></a>
+  </div>
+<% end %>

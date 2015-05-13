@@ -1,7 +1,13 @@
+<div>New Recipient:</div>
 <%= form_for @recipient do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <br>
   <%= f.label :phone_num %>
   <%= f.text_field :phone_num %>
+  <br>
   <%= f.submit %>
 <% end %>
+
+<%= link_to "Back", recipients_path %> <br>
+
