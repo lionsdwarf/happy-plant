@@ -29,6 +29,7 @@ class RecipientsController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @recipient = Recipient.find(params[:id])
     @recipient.destroy
   end
