@@ -1,8 +1,17 @@
-<%= link_to '+ Plant', new_plant_path %>
+<%= link_to 'Add Plant Profile', new_plant_path %>
+<%= link_to 'Manage Recipients', recipients_path %>
+
+<hr>
+
+<% @user.recipients.each do |recipient| %>
+  <%= recipient.name %>
+  <br>
+<% end %>
+
 <hr>
 <% @user.plants.each do |plant| %>
   <h1><%= link_to plant.name, plant_path(plant.id) %></h1><br>
-  <img src="<% plant.photo_url %>" alt="<%= plant.name %>">
+  <img src="<%= plant.photo_url %>" alt="<%= plant.name %>">
   <h2><%= plant.plant_type %></h2>
   <p>Stamina: <%= plant.stamina %> days</p>
 

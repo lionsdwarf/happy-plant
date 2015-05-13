@@ -15,24 +15,27 @@ class Plant < ActiveRecord::Base
             presence: true
 
   def notify
-    # puts "notify called"
     account_sid = ENV['TWILIO_ACCT_SID']
     auth_token = ENV['TWILIO_AUTH_TOKEN']
     @client = Twilio::REST::Client.new account_sid, auth_token
     @twilio_num = ENV['TWILIO_PHONE_NO']
-    recipient = "+1" + user.phone_num
+    recipient_array = user.recipients
 
-    message = @client.account.messages.create(
-      :from => @twilio_num,
-      :to => recipient,
-      :body => "#{name} is getting thirsty...please hydrate with tepid water.",
-      :media_url => photo_url
-    )
-    last_notified = DateTime.now.to_i.to_s
+    recipient_array.each do |recipient|
+
+      recipient = "+1" + recipient.phone_num
+  
+      message = @client.account.messages.create(
+        :from => @twilio_num,
+        :to => recipient,
+        :body => "#{name} is getting thirsty...please hydrate...",
+        :media_url => photo_url
+      )
+      last_notified = DateTime.now
+    end
   end
 
   def thirst_checker
-    # puts "thirst checker called"
     # stamina = stamina * 86400
     last_notified = last_notified.to_i
     now = DateTime.now.to_i
