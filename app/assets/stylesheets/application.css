@@ -16,7 +16,7 @@
 @import url('//fonts.googleapis.com/css?family=Amatic+SC');
 
 body {
-  background-image: url("fuzzyleaves.jpg");
+  background-image: url('fuzzyleaves.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Amatic SC', cursive;
