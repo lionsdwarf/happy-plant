@@ -1,0 +1,9 @@
+<% @user.recipients.each do |recipient| %>
+  <%= recipient.name %>
+  <%= recipient.phone_num %>
+  <%= link_to "Edit", edit_recipient_path(@recipient) %>
+  <br>
+<% end %>
+
+<%= link_to "Add Recipient", new_recipient_path %> <br>
+<%= link_to "Home", user_path(current_user) %> <br>

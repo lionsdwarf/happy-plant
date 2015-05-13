@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   # root to: 'application#index'
   root 'welcome#index'
   
-  resources :users
+  resources :users, except: [:edit, :update]
   resources :plants
+  resources :recipients, except: [:show]
   # resources :sessions, only: [:new, :create, :delete]
   resources  :twilio, only: [:create]
 
