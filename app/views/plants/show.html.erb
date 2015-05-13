@@ -1,10 +1,12 @@
-<h2><%= @plant.name %></h2>
-<h3><%= @plant.plant_type %></h3>
-<img src="<%= @plant.photo_url %>" alt="">
-<p>Stamina: <%= @plant.stamina %> days</p>
+<div class="plant-show">
+  <h2><%= @plant.name %></h2>
+  <h3><%= @plant.plant_type %></h3>
+  <img src="<%= @plant.photo_url %>" alt="">
+  <p>Stamina: <%= @plant.stamina %> days</p>
+  
+  
+  <%= link_to "Edit", edit_plant_path(@plant) %> <br>
+  <%= button_to "Delete", @plant, :method=>:delete, :class=>:destroy %>
 
-
-<%= link_to "Edit", edit_plant_path(@plant) %> <br>
-<%= link_to "Home", user_path(current_user) %> <br>
-<%= button_to "Delete", @plant, :method=>:delete, :class=>:destroy %>
-
+</div>
+<a class="home"><%= link_to "Home", user_path(current_user) %> </a>

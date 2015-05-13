@@ -15,7 +15,6 @@
       <h2 class="logged-in-header">Happy Plant.r</h2>
       <div class="welcome-logout">
         <p class="welcome-msg">Welcome back, <%= current_user.username %></p>
-        <p class="logout-link"><%= link_to 'Log out', sessions_path, method: :delete %></p>
       </div>
     <% else %> 
       <div class="landing-page">

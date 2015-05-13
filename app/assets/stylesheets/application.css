@@ -25,7 +25,7 @@ body {
 
 h1 {
   font-weight: 500;
-  font-size: 80px;
+  font-size: 110px;
   text-align: center;
   color: rgba(176, 065, 096, 1);
   /*color: rgba(255,255,255,1);*/
@@ -47,15 +47,23 @@ h1 {
 }
 
 .logged-in-header {
-  font-size: 55px;
+  margin-top: .4em;
+  font-size: 65px;
+  font-weight: 400;
   text-align: center;
   color: rgba(176, 065, 096, 1);
   margin-bottom: 0;
+  line-height: 1.4em;
 }
 
 .welcome-logout {
   text-align: center;
   font-size: 28px;
+}
+
+.welcome-logout a {
+  color: rgba(0,63,76, 0.8);
+  text-decoration: none;
 }
 
 .welcome-msg {
@@ -71,16 +79,16 @@ h1 {
 .login-signup a {
   font-size: 45px;
   text-decoration: none;
-  color: rgba(0,128,128,1);
+  color: rgba(0,63,76, 0.8);
   font-weight: 400;
 }
 
 .login-signup a:hover {
-  color: rgba(0,128,128,.7)
+  color: rgba(176, 065, 096, 1)
 }
 
 #pipe {
-  color: rgba(56,56,56, 0.8);
+  color: rgba(56,56,56, 0.5);
 }
 
 .login-form {
@@ -89,8 +97,38 @@ h1 {
 }
 
 .login-form h3 {
-  color: rgba(0,128,128,1);
+  color: rgba(0,63,76, 0.8);
   font-weight: 200
+}
+
+.login-form a {
+  text-decoration: none;
+  color: rgba(0,63,76, 0.8);
+
+}
+
+.login-form a:hover {
+  color: rgba(176, 065, 096, 1);
+}
+
+.signup-form {
+  font-size: 32px;
+  text-align: center;
+}
+
+.signup-form h3 {
+  color: rgba(0,63,76, 0.8);
+  font-weight: 200
+}
+
+.signup-form a {
+  text-decoration: none;
+  color: rgba(0,63,76, 0.8);
+
+}
+
+.signup-form a:hover {
+  color: rgba(176, 065, 096, 1);
 }
 
 form input[type='text'] {
@@ -101,6 +139,8 @@ form input[type='text'] {
   font-size: 22px;
   font-family: 'Amatic SC', cursive;
   border-radius: 0.3em;
+  border-style: ridge;
+  border-color: rgba(255,255,255, .4)
 }
 
 form input[type='password'] {
@@ -111,4 +151,109 @@ form input[type='password'] {
   font-size: 22px;
   font-family: 'Amatic SC', cursive;
   border-radius: 0.3em;
+  border-style: ridge;
+  border-color: rgba(255,255,255, .4)
 }
+
+.plant-recipient-links {
+  margin-top: .2em;
+  text-align: center;
+  margin-top: 1.3em;
+  font-size: 40px;
+  margin-top: 0.2em;
+
+}
+
+.plant-recipient-links a {
+  color: rgba(0,63,76, 0.8);
+  text-decoration: none;
+}
+
+#pipe2 {
+  color: rgba(56,56,56,1);
+}
+
+.plants {
+  color: rgba(56,56,56,1);
+  text-align: center;
+}
+
+.plants h3 {
+  font-size: 35px;
+  margin-top: 0.3em;
+}
+
+.plant {
+  height: 400px;
+  width: 300px;
+  border-style: solid;
+  border-color: rgba(56,56,56,0.6);
+  border-radius: 0.3em;
+  border-width: 1px;
+  background-color: rgba(255,255,255, 0.3);
+  display: inline-block;
+  border-radius: 0.4em;
+  margin: .5em;
+}
+
+.plant img {
+  max-height: 300px;
+  max-width: 200px;
+  border-style: solid;
+  border-color: rgba(176, 065, 096, 1);
+  border-radius: 0.3em;
+  border-width: 1px;
+}
+
+.plant a {
+  color: rgba(176, 065, 096, 1);
+  text-decoration: none;
+  font-size: 36px;
+}
+
+.plant h2 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.plant p {
+  font-size: 34px;
+  margin: 0;
+}
+
+.plant-show {
+  text-align: center;
+  height: 800px;
+  width: 600px;
+  border-style: solid;
+  border-color: rgba(56,56,56,0.6);
+  border-radius: 0.3em;
+  border-width: 1px;
+  background-color: rgba(255,255,255, 0.5);
+  border-radius: 0.4em;
+  margin: .5em;
+}
+
+.plant-show img {
+  max-height: 750px;
+  max-width: 500px;
+  border-style: solid;
+  border-color: rgba(176, 065, 096, 1);
+  border-radius: 0.3em;
+  border-width: 1px;
+}
+
+.plant-show h2 {
+  color: rgba(176, 065, 096, 1);
+  text-decoration: none;
+  font-size: 50px;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.plant-show h3 {
+  font-size: 35px;
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+

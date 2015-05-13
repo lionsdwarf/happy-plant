@@ -1,21 +1,18 @@
 <div class="signup-form"> 
-  <p> Sign up: </p>
+  <h3> Sign up: </h3>
   <%= form_for @user do |f| %>
     <%= f.label :username %><br>
     <%= f.text_field :username %><br>
-    <br>
-    <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_num %><br>
-    <br>
+
     <%= f.label :password %><br>
     <%= f.password_field :password %><br>
-    <br>
+
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %><br>
-    <br>
+
     <%= f.submit %>
   
-    <p>Or: <%= link_to 'Log in', sessions_new_path %></p>
+    <p>Or: &nbsp;&nbsp;<%= link_to 'Log in', sessions_new_path %></p>
         
   <% end %>
 </div>
