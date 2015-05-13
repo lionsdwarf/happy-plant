@@ -1,14 +1,12 @@
 <%= link_to 'Add Plant Profile', new_plant_path %>
-<%= link_to 'Manage Recipients', recipients_path %>
-
-<hr>
+<%= link_to 'Manage MMS Recipients', recipients_path %>
+<br>
 
 <% @user.recipients.each do |recipient| %>
   <%= recipient.name %>
   <br>
 <% end %>
 
-<hr>
 <% @user.plants.each do |plant| %>
   <h1><%= link_to plant.name, plant_path(plant.id) %></h1><br>
   <img src="<%= plant.photo_url %>" alt="<%= plant.name %>">

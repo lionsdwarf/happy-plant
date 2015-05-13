@@ -1,7 +1,10 @@
+
+<div>Your MMS Recipients:</div><br>
 <% @user.recipients.each do |recipient| %>
   <%= recipient.name %>
   <%= recipient.phone_num %>
-  <%= link_to "Edit", edit_recipient_path(@recipient) %>
+  <%= link_to "Edit", edit_recipient_path(recipient) %>
+  <%= button_to "Delete", :method => :delete %>
   <br>
 <% end %>
 

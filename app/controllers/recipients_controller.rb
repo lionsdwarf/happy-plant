@@ -19,13 +19,13 @@ class RecipientsController < ApplicationController
   end
 
   def edit
-    binding.pry
     @recipient = Recipient.find(params[:id])
   end
 
   def update
     @recipient = Recipient.find(params[:id])
     @recipient.update(recipient_params)
+    redirect_to recipients_path
   end
 
   def destroy
