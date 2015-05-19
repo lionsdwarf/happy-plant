@@ -16,7 +16,7 @@
 @import url('//fonts.googleapis.com/css?family=Amatic+SC');
 
 body {
-  background-image: url('fuzzyleaves.jpg');
+  background-image: url(<%= asset_path('fuzzyleaves.jpg') %>);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Amatic SC', cursive;
@@ -206,6 +206,7 @@ form input[type='password'] {
 }
 
 .plant a {
+  /*color: rgba(0,63,76, 0.8);*/
   color: rgba(176, 065, 096, 1);
   text-decoration: none;
   font-size: 36px;
@@ -257,3 +258,19 @@ form input[type='password'] {
   margin-bottom: 0.3em;
 }
 
+.recipients-index {
+  padding-top: 1em;
+  font-size: 35px;
+  text-align: center;
+}
+
+.recipients-index a {
+  text-decoration: none;
+  color: rgba(0,63,76, 0.8);
+
+}
+
+.edit-recipient-form {
+  font-size: 35px;
+  text-align: center;
+}

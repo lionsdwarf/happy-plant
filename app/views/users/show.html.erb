@@ -8,12 +8,14 @@
 <h3>Your plants:</h3>
   <% @user.plants.each do |plant| %>
     <div class="plant">
-      <a><%= link_to plant.name, plant_path(plant.id) %></a><br>
+      <div class="name">
+        <a><%= link_to plant.name, plant_path(plant.id) %></a><br>
+      </div>
       <img src="<%= plant.photo_url %>" alt="<%= plant.name %>">
       <h2><%= plant.plant_type %></h2>
       <p>Stamina: <%= plant.stamina %> days</p>
     
-      <a> <%= link_to 'Edit', edit_plant_path(plant.id) %> </a>
+      <a class="edit"> <%= link_to 'Edit', edit_plant_path(plant.id) %> </a>
     </div>
     <% end %>
 </div>
