@@ -46,7 +46,7 @@ h1 {
   padding-right: 1.4em;   
 }
 
-.logged-in-header {
+.session-header {
   margin-top: .4em;
   font-size: 65px;
   font-weight: 400;
@@ -70,20 +70,20 @@ h1 {
   margin: 0;
 }
 
-.login-signup {
+.login-signup-links {
   text-align: center;
   border-radius: 0.5em;
   padding: 1em;
 }
 
-.login-signup a {
+.login-signup-links a {
   font-size: 45px;
   text-decoration: none;
   color: rgba(0,63,76, 0.8);
   font-weight: 400;
 }
 
-.login-signup a:hover {
+.login-signup-links a:hover {
   color: rgba(176, 065, 096, 1)
 }
 
@@ -91,30 +91,30 @@ h1 {
   color: rgba(56,56,56, 0.5);
 }
 
-.login-form {
+.form {
   font-size: 32px;
   text-align: center;
 }
 
-.login-form h3 {
+.form h3 {
   color: rgba(0,63,76, 0.8);
   font-weight: 200
 }
 
-.login-form a {
+.form a {
   text-decoration: none;
   color: rgba(0,63,76, 0.8);
 
 }
 
-.login-form a:hover {
+.form a:hover {
   color: rgba(176, 065, 096, 1);
 }
-
+/*
 .signup-form {
   font-size: 32px;
   text-align: center;
-}
+}*/
 
 .signup-form h3 {
   color: rgba(0,63,76, 0.8);
@@ -137,7 +137,8 @@ form input[type='text'] {
   background-color: rgba(255,255,255, 0);
   text-align: center;
   font-size: 22px;
-  font-family: 'Amatic SC', cursive;
+  font-family: Helvetica;
+  font-weight: 200;
   border-radius: 0.3em;
   border-style: ridge;
   border-color: rgba(255,255,255, .4)
@@ -149,7 +150,8 @@ form input[type='password'] {
   background-color: rgba(255,255,255, 0);
   text-align: center;
   font-size: 22px;
-  font-family: 'Amatic SC', cursive;
+  font-family: Helvetica;
+  font-weight: 200;
   border-radius: 0.3em;
   border-style: ridge;
   border-color: rgba(255,255,255, .4)
@@ -224,11 +226,11 @@ form input[type='password'] {
 
 .plant-show {
   text-align: center;
-  height: 800px;
+
+/*  height: 650px; */
   width: 600px;
   border-style: solid;
   border-color: rgba(56,56,56,0.6);
-  border-radius: 0.3em;
   border-width: 1px;
   background-color: rgba(255,255,255, 0.5);
   border-radius: 0.4em;
@@ -236,8 +238,8 @@ form input[type='password'] {
 }
 
 .plant-show img {
-  max-height: 750px;
-  max-width: 500px;
+  max-height: 400px;
+  max-width: 400px;
   border-style: solid;
   border-color: rgba(176, 065, 096, 1);
   border-radius: 0.3em;
@@ -258,19 +260,51 @@ form input[type='password'] {
   margin-bottom: 0.3em;
 }
 
+.plant-show a {
+  font-size: 32px;
+  font-weight: 600px;
+  color: rgba(0,63,76, 0.8);
+  text-decoration: none;
+}
+
 .recipients-index {
   padding-top: 1em;
   font-size: 35px;
   text-align: center;
+  padding: none;
 }
 
 .recipients-index a {
   text-decoration: none;
   color: rgba(0,63,76, 0.8);
+}
 
+.recipients-index .add-recipient {
+  margin-bottom: 0.6em;
 }
 
 .edit-recipient-form {
   font-size: 35px;
   text-align: center;
+}
+
+.button {
+  color: rgba(176, 065, 096, 1);
+  margin-top: 0.4em;
+  background:none!important;
+  /*padding:0!important;*/
+  font: inherit;
+  border-width: 2px;
+  border-radius: 4px; 
+  cursor: pointer;
+}
+
+.delete-button {
+  color: rgba(176, 065, 096, 1);
+  margin-top: 0.4em;
+  background:none!important;
+  /*padding:0!important;*/
+  font: inherit;
+  border:none;
+  font-size: 32px;
 }

@@ -9,7 +9,9 @@
     <%= f.text_field :phone_num %>
     <br>
 
-    <%= f.submit %>
+    <%= f.submit 'Save', :class => 'button' %>
+
+    <%= link_to "Back", recipients_path %> <br>
 
   <% end %>
 </div>

@@ -6,7 +6,6 @@
   
   
   <%= link_to "Edit", edit_plant_path(@plant) %> <br>
-  <%= button_to "Delete", @plant, :method=>:delete, :class=>:destroy %>
-
+  <%= button_to "Delete", @plant, :method=>:delete, :class=> 'delete-button' %>
 </div>
-<a class="home"><%= link_to "Home", user_path(current_user) %> </a>
+<%= link_to "Home", user_path(current_user) %>

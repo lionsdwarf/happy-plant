@@ -1,12 +1,17 @@
 
-<div class="recipients-index">Your MMS Recipients:<br>
-<% @user.recipients.each do |recipient| %>
-  <%= recipient.name %>&nbsp;&nbsp;&nbsp;
-  <%= recipient.phone_num %>&nbsp;&nbsp;&nbsp;
-  <a> <%= link_to "Edit", edit_recipient_path(recipient) %> </a>
-  <br>
-<% end %>
+<div class="recipients-index">
+  <div class ="add-recipient">
+    <%= link_to "Add Recipient", new_recipient_path %>
+  </div>
+  <div>Your MMS Recipients:</div>
 
-<%= link_to "Add Recipient", new_recipient_path %> <br>
-<%= link_to "Home", user_path(current_user) %> <br>
+  <% @user.recipients.each do |recipient| %>
+    <%= recipient.name %>&nbsp;&nbsp;&nbsp;
+    <%= recipient.phone_num %>&nbsp;&nbsp;&nbsp;
+    <%= link_to "Edit", edit_recipient_path(recipient) %>
+    <br>
+  <% end %>
+  <p id="going-home">
+    <%= link_to "Home", user_path(current_user) %>
+  </p>
 </div>

@@ -1,4 +1,4 @@
-<div class="signup-form"> 
+<div class="form"> 
   <h3> Sign up: </h3>
   <%= form_for @user do |f| %>
     <%= f.label :username %><br>
@@ -10,7 +10,7 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %><br>
 
-    <%= f.submit %>
+    <%= f.submit 'Enter', :class => 'button' %>
   
     <p>Or: &nbsp;&nbsp;<%= link_to 'Log in', sessions_new_path %></p>
         

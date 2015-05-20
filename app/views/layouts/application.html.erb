@@ -12,18 +12,16 @@
   <div class="page">
       
     <% if current_user %>
-      <h2 class="logged-in-header">Happy Plant.r</h2>
+      <h2 class="session-header">Happy Plant.r</h2>
       <div class="welcome-logout">
         <p class="welcome-msg">Welcome back, <%= current_user.username %></p>
       </div>
     <% else %> 
-      <div class="landing-page">
-        <div class="landing-page-blurb">
+      <div class="landing-page-blurb">
         <h1>Happy Plant.r</h1>
         Receive mms reminders to water your plants when they are thirsty. <br> And send reminders to your plant caretakers too. It's really easy: <br>
         1) Add your plants and define their watering frequencies.<br>
         2) Leave your phone on.<br>
-        </div>
       </div>
     <% end%>
     <%= yield %>
