@@ -9,15 +9,15 @@
   <% @user.plants.each do |plant| %>
     <div class="plant">
       <div class="name">
-        <a><%= link_to plant.name, plant_path(plant.id) %></a><br>
+        <%= link_to plant.name, plant_path(plant.id) %><br>
       </div>
       <img src="<%= plant.photo_url %>" alt="<%= plant.name %>">
       <h2><%= plant.plant_type %></h2>
-      <p>Stamina: <%= plant.stamina %> days</p>
+      <p>Notify every: <%= plant.stamina %> days</p>
     
-      <a class="edit"> <%= link_to 'Edit', edit_plant_path(plant.id) %> </a>
+      <%= link_to 'Edit', edit_plant_path(plant.id) %>
     </div>
     <% end %>
 </div>
 
-<a class="logout"><%= link_to 'Log out', sessions_path, method: :delete %></a>
+<%= link_to '| Log out |', sessions_path, method: :delete, :class => 'logout' %>
